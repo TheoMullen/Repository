@@ -1,0 +1,22 @@
+int_paid=int(input('Enter interest paid in the year \n£'))
+
+if int_paid!=0:
+    trading_int_paid=int(input('Trading-related interest expenses may relate to a write-off of trade receivables, loans to fund operations or buy machinery or other trading-related transactions.\n\nEnter trading-related interest expenses: \n£'))
+    non_trading_int_paid=int_paid-trading_int_paid
+    print(f'\nInterest expense related to trading activities: £{trading_int_paid} \nInterest expense related to non-trading activities: £{non_trading_int_paid}')
+    
+else:
+    trading_int_paid=0
+    non_trading_int_paid=0
+    
+    
+int_recd=int(input('Enter interest received in the year \n£'))
+
+if int_recd!=0:
+    trading_int_recd=int(input('If lending money is your trade, enter the proportion of interest received from lending (enter "0" if not): \n£'))
+    non_trading_int_recd=int_recd-trading_int_recd
+    print(f'\nInterest received related to trading activities: £{trading_int_recd}\nInterest received related to non-trading activities: £{non_trading_int_recd}')
+    
+else:
+    trading_int_recd=0
+    non_trading_int_recd=0
