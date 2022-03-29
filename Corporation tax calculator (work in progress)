@@ -20,3 +20,44 @@ if int_recd!=0:
 else:
     trading_int_recd=0
     non_trading_int_recd=0
+    
+    
+#Property income
+
+rent=int(input('Enter any rental income received: \n£'))
+
+property_expenses=int(input('Enter total property expenses: \n£'))
+allowable_property_expenses=int(input('Expenses are allowable if wholly and exclusively for the property business. Enter allowable property expenses: \n£'))
+
+lease_premium=int(input('If you let a property on a short lease (<50 years) in the past year, enter the lease premium (enter "0" if not): \n£'))
+if lease_premium==0:
+    assessable_lease_premium=0
+else:
+    assessable_lease_premium=lease_premium*(51-int(input('Enter the length of the lease in years: \n')))/50
+
+property_income=rent-allowable_property_expenses+assessable_lease_premium
+
+print(f'Taxable property income: £{property_income}')
+
+
+
+
+#Chargeable gains
+
+disposal_proceeds=int(input('Enter the proceeds received from an asset disposal in the year (enter "0" if none): \n'))
+if disposal_proceeds==0:
+    chargeable_gain=0
+else:
+    disposal_costs=int(input('Enter the incidental costs related to the disposal: \n'))
+    allowable_expenditure=int(input('Allowable expenses: \n'))
+    acquisition_costs=int(input('Enter cost and incidental costs of asset acquisition: \n'))
+    enhancement_expenditure=int(input('Enter enhancement expenditure: \n'))
+
+    RPI1=float(input('Enter RPI in month of expenses: \n'))
+    RPI2=float(input('Enter RPI in month of disposal: \n'))
+    #Calculating for 'allowable expenditure' only
+    indexation_allowance=allowable_expenditure*(RPI2-RPI1)/RPI1
+
+    chargeable_gain=disposal_proceeds-disposal_costs-allowable_expenditure-acquisition_costs-enhancement_expenditure-indexation_allowance
+    print(f'Chargeable gain: £{chargeable_gain}')
+    
