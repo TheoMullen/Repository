@@ -38,7 +38,7 @@ if rain_due:
         .create(
         body="It will rain today.",
         from_='+19853165886',
-        to='+447788663759'
+        to='[my phone number]'
     )
 
     print(message.status)
