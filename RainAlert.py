@@ -2,7 +2,7 @@ import requests
 from twilio.rest import Client
 import os
 
-api_key = "98fe90a2e11bcb0455aa71ba45702e9a"
+api_key = os.environ.get("API_KEY")
 lat = 51.507351
 lon = 0.127758
 exclude = "current,minutely,daily"
@@ -11,7 +11,7 @@ api_parameters = {"lat": lat, "lon": lon, "exclude": exclude, "appid": api_key}
 api_endpoint = "https://api.openweathermap.org/data/2.5/onecall"
 
 account_sid = 'AC28175ccf1b8f8b141c74370eb9b834aa'
-auth_token = '4e9135cfae4cba1d0b375baeee988e57'
+auth_token = os.environ.get("AUTH_TOKEN")
 
 
 # Check if rain is due in the next 12 hours
