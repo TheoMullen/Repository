@@ -1,7 +1,6 @@
 import requests
 from twilio.rest import Client
 from datetime import date, timedelta
-from datetime import datetime as dt
 
 
 STOCK = "TSLA"
@@ -51,26 +50,19 @@ news_api_parameters = {"q": NAME, "from": date_list[1], "sortBy": "relevancy", "
 news_response = requests.get(url=news_url, params=news_api_parameters)
 news_response.raise_for_status()
 news_data = news_response.json()
-test = news_data['articles']
 
-a1_title = news_data['articles'][0]["title"]
-a1_description = news_data['articles'][0]["description"]
-a2_title = news_data['articles'][1]["title"]
-a2_description = news_data['articles'][1]["description"]
-a3_title = news_data['articles'][2]["title"]
-a3_description = news_data['articles'][2]["description"]
 
 alert = f"""
 TSLA: {movement} 
 
-Headline: {a1_title} 
-Description: {a1_description} 
+Headline: {news_data['articles'][0]["title"]} 
+Description: {news_data['articles'][0]["description"]} 
 
-Headline: {a2_title} 
-Description: {a2_description} 
+Headline: {news_data['articles'][1]["title"]} 
+Description: {news_data['articles'][1]["description"]} 
 
-Headline: {a3_title} 
-Description: {a3_description}
+Headline: {news_data['articles'][2]["title"]} 
+Description: {news_data['articles'][2]["description"]}
 """
 
 
