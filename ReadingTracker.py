@@ -59,6 +59,7 @@ def post_today(quantity):
     response = requests.post(url=pixel_endpoint, json=pixel_parameters, headers=headers)
     print(response.text)
 
+    
 def update(quantity, day, month, year):
     day = dt.datetime(day=day, month=month, year=year)
     date = day.strftime("%Y%m%d")
@@ -70,8 +71,6 @@ def update(quantity, day, month, year):
 
     response = requests.put(url=update_endpoint, json=update_parameters, headers=headers)
     print(response.text)
-
-
 
 
 def delete(day, month, year):
