@@ -6,6 +6,9 @@ TOKEN = "my_token"
 GRAPH_ID = "graph"
 
 
+
+#Make a Pixela account
+
 pixella_endpoint = "https://pixe.la/v1/users"
 
 parameters = {
@@ -18,6 +21,9 @@ parameters = {
 # response = requests.post(url=pixella_endpoint, json=parameters)
 # print(response.text)
 
+
+
+#Set up a graph online
 
 graph_endpoint = f"{pixella_endpoint}/{USERNAME}/graphs"
 
@@ -36,6 +42,9 @@ headers = {
 # response = requests.post(url=graph_endpoint, json=graph_parameters, headers=headers)
 # print(response.text)
 
+
+
+#Functions to change the graph data
 
 def post_today(quantity):
     day = dt.datetime.today()
