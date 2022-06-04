@@ -1,3 +1,6 @@
+# This creates a Spotify playlist of popular songs from a given date.
+# I had to check an online solution to make it work.
+
 import requests
 from bs4 import BeautifulSoup
 import spotipy
