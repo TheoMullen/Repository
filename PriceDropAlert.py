@@ -19,7 +19,7 @@ price = float(price_str[1:])
 if price <= 100:
 
     my_email = "tjmtestemail@gmail.com"
-    password = "tjmtestemail2022"
+    password = PASSWORD
     with SMTP("smtp.gmail.com") as connection:
         connection.starttls()
         connection.login(user=my_email, password=password)
