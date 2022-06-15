@@ -2,7 +2,7 @@ import time
 from selenium import webdriver
 
 
-workable_job_link = "https://apply.workable.com/gohenry/j/F72BCE3FCC/apply/"
+workable_job_link = LINK_TO_A_WORKABLE_APPLICATION_PAGE
 
 first_name = FIRST_NAME
 last_name = LAST_NAME
