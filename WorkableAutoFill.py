@@ -1,6 +1,5 @@
 import time
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 
 
 workable_job_link = "https://apply.workable.com/gohenry/j/F72BCE3FCC/apply/"
