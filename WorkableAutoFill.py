@@ -47,20 +47,30 @@ driver.get(workable_job_link)
 driver.set_window_size(height=800, width=1500)
 
 
-first_name_box = driver.find_element_by_id(id_="firstname")
-first_name_box.send_keys(first_name)
-last_name_box = driver.find_element_by_id(id_="lastname")
-last_name_box.send_keys(last_name)
-email_box = driver.find_element_by_id(id_="email")
-email_box.send_keys(email)
-headline_box = driver.find_element_by_id(id_="headline")
-headline_box.send_keys(headline)
-phone_box = driver.find_element_by_name(name="phone")
-phone_box.send_keys(phone)
-address_box = driver.find_element_by_id(id_="address")
-address_box.send_keys(address)
+try:
+    headline_box = driver.find_element_by_id(id_="headline")
+    headline_box.send_keys(headline)
+except:
+    pass
 
+try:
+    phone_box = driver.find_element_by_name(name="phone")
+    phone_box.send_keys(phone)
+except:
+    pass
+try:
+    address_box = driver.find_element_by_id(id_="address")
+    address_box.send_keys(address)
+except:
+    pass
 
+try:
+    summary_box = driver.find_element_by_name(name="summary")
+    summary_box.send_keys(summary)
+except:
+    pass
+
+  
 add_buttons = driver.find_elements_by_css_selector("button")
 add_education = add_buttons[1]
 add_experience = add_buttons[2]
@@ -110,9 +120,5 @@ for _ in experience.keys():
         if _.text == "Save":
             save_button = _
     save_button.click()
-
-
-summary_box = driver.find_element_by_name(name="summary")
-summary_box.send_keys(summary)
 
 print("Autofill complete. Check for any remaining fields to fill out.")
